@@ -1,0 +1,8 @@
+name: Github Actions Intro
+on: [push]
+jobs:
+  MyfirstJob:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "MyfirstJob"
+    
