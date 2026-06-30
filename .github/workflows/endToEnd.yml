@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
   # 2. Equivalent to Jenkins 'Build' stage
   build:
@@ -22,10 +22,10 @@ jobs:
     needs: checkout_code
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '20'
 
@@ -57,7 +57,7 @@ jobs:
     needs: build
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -86,5 +86,3 @@ jobs:
       - name: Deploy to Cloud
         run: |
           echo "Deploying to production server..."
-          # Replace with your actual deployment script or Action
-          # e.g., aws s3 sync dist/ s3://my-bucket
